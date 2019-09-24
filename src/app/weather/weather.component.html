@@ -1,0 +1,19 @@
+<div class="card-container">
+
+
+    <mat-card *ngFor="let city of cities">
+      <mat-card-title>{{city.name | titlecase }}</mat-card-title>
+      <mat-card-subtitle>{{ city.tempF | number : "2.2-2" }}°F</mat-card-subtitle>
+      <mat-card-subtitle>{{city.tempC | number : "2.2-2" }}°C</mat-card-subtitle>
+    </mat-card>
+
+
+
+  <mat-form-field class="example-full-width">
+    <input matInput #cityBox type="text" placeholder="New city name" name="name" />
+  </mat-form-field>
+  <button mat-button (click)="addCity(cityBox.value)">Add city</button>
+
+  <p>{{ error }}</p>
+
+</div>
